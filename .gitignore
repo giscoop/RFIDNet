@@ -1,0 +1,6 @@
+# ignore venv
+final_prj/
+
+# ignore built OSRM files
+OSRM/*
+!OSRM/Dockerfile

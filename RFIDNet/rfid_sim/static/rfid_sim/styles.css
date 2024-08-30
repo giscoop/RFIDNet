@@ -1,0 +1,30 @@
+#map, .leaflet-container {
+  height: 350px;
+  max-width: 750px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#simContainer {
+  display: none;
+}
+
+#simRun {
+  display: none;
+}
+
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, #map {
+  width: 100vw;
+}
+
+.title-text {
+  margin: 20px;
+}

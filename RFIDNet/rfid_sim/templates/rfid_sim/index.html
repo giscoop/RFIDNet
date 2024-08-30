@@ -1,0 +1,40 @@
+
+{% extends 'rfid_sim/layout.html' %}
+
+{% block body %}
+    <div class="title-text">
+        <div id="headingSection">
+            <h1>RFIDSim</h1>
+            <h3><i>Crowdsourcing real-time location data</i></h3>
+        </div>
+        <div id="aboutSection">
+            <p>As the RFID scanner network grows, tools will be needed to identify gaps and areas of need.  This app randomly generates start and endpoints in a study area, and generates driving routes between them.  This is meant to simulate the virtually random routes taken by logistics companies as they make deliveries to addresses that vary day to day.  The app allows you to propose a location for a given reader placement, and then run a simulation of hypothetical delivery routes - as delivery vehicles are guarunteed to contain countless RFID chips.  The number of routes that pass within each proposed reader's range are returned as a report.  The app is built using entirely free and open-source tools.</p>
+        </div>
+        <div id="instructionsSection">
+            <h3>Instructions</h3>
+            <ol>
+                <li>Register or login</li>
+                <li>Click the "New Simulation" button below</li>
+                <li>Use the pin marker tool on the left-hand taskbar to place a proposed RFID chip reader on the map</li>
+                <li>Choose a chip reader class</li>
+                <li>Click "Submit"</li>
+                <li>Click "Add another reader" and repeat steps 3-6 as many times as you like</li>
+                <li>When ready, click "Run Simulation" to generate routes, and return a report.  The more intersecting routes, the more value your reader offers!</li>
+                <li>To view past simulations you have run, go to the My Simulations section using the button on the navigation bar</li>
+            </ol>
+        </div>
+    </div>
+    
+    {% if user.is_authenticated %}
+        <div class="title-text">
+            <h4>
+                <i>Get started with a new simulation now!</i>
+            </h4>
+            <form action="{% url 'new_sim' %}">
+                <input type="submit" value="New Simulation">
+            </form>
+        </div>
+        
+    {% endif %}
+
+{% endblock %}

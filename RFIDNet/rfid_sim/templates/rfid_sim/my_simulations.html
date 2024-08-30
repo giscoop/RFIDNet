@@ -1,0 +1,18 @@
+
+{% extends 'rfid_sim/layout.html' %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+    <h1>My Simulations</h1>
+    <ul>
+    {% for sim in sim_list %}
+        <li><a href="/simulations/{{ sim.id }}">Simulation {{ sim.id }}</a></li>
+    {% endfor %}
+    </ul>
+    <form action="{% url 'new_sim' %}">
+        <input type="submit" value="New Simulation">
+    </form>
+    {% endif %}
+    
+
+{% endblock %}
